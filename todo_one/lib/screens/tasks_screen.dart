@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_one/screens/widgets/tasks_list.dart';
 
 class TasksScreen extends StatelessWidget {
   const TasksScreen({super.key});
@@ -9,7 +10,7 @@ class TasksScreen extends StatelessWidget {
       //================== Add Button ==========================================
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        backgroundColor: Colors.indigo[400],
+        backgroundColor: Colors.red,
         child: const Icon(
           Icons.add,
           color: Colors.white,
@@ -17,10 +18,10 @@ class TasksScreen extends StatelessWidget {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       //========================================================================
-      backgroundColor: Colors.teal[400],
+      backgroundColor: Colors.blue,
       body: Container(
         padding:
-            const EdgeInsets.only(top: 60, left: 20, right: 20, bottom: 40),
+            const EdgeInsets.only(top: 50, left: 20, right: 20, bottom: 45),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -29,7 +30,7 @@ class TasksScreen extends StatelessWidget {
                 //================== Header Icon ===============================
                 Icon(
                   Icons.playlist_add_check,
-                  size: 40,
+                  size: 60,
                   color: Colors.white,
                 ),
                 //==============================================================
@@ -64,8 +65,11 @@ class TasksScreen extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(20)),
                     boxShadow: [
                       BoxShadow(
-                          color: Colors.white, blurRadius: 5, spreadRadius: 1)
+                          color: Colors.white70,
+                          blurRadius: 20,
+                          spreadRadius: 1)
                     ]),
+                child: const TasksList(),
               ),
             ),
             //==================================================================
