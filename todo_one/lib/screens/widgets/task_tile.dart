@@ -7,7 +7,7 @@ class TaskTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
+    return const ListTile(
       title: Text("Study Provider"),
       trailing: Checkbox(value: false, onChanged: null),
     );
