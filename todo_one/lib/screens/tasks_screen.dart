@@ -21,15 +21,16 @@ class TasksScreen extends StatelessWidget {
                     child: const AddTasksScreen(),
                   )));
         },
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.red[600],
         child: const Icon(
           Icons.add,
           color: Colors.white,
         ),
       ),
+
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       //========================================================================
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.blue[600],
       body: Container(
         padding:
             const EdgeInsets.only(top: 50, left: 20, right: 20, bottom: 45),
@@ -37,19 +38,29 @@ class TasksScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
-              children: const [
+              children: [
                 //================== Header Icon ===============================
-                Icon(
-                  Icons.playlist_add_check,
-                  size: 60,
-                  color: Colors.white,
+                DecoratedBox(
+                  decoration: const BoxDecoration(boxShadow: [
+                    BoxShadow(
+                        color: Colors.white60, blurRadius: 30, spreadRadius: 1)
+                  ]),
+                  child: CircleAvatar(
+                    radius: 30,
+                    backgroundColor: Colors.white,
+                    child: Icon(
+                      Icons.list,
+                      size: 50,
+                      color: Colors.blue[600],
+                    ),
+                  ),
                 ),
                 //==============================================================
-                SizedBox(
-                  width: 20,
+                const SizedBox(
+                  width: 30,
                 ),
                 //================== Header Text ===============================
-                Text(
+                const Text(
                   "To DO List",
                   style: TextStyle(
                       fontSize: 40,
@@ -60,14 +71,17 @@ class TasksScreen extends StatelessWidget {
               ],
             ),
             //================== Tasks count Text ==============================
-            const Text(
-              "4 Tasks",
-              style: TextStyle(fontSize: 18, color: Colors.white),
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 22),
+              child: Center(
+                child: Text(
+                  "4 Tasks",
+                  style: TextStyle(fontSize: 18, color: Colors.white),
+                ),
+              ),
             ),
             //==================================================================
-            const SizedBox(
-              height: 20,
-            ),
+
             //================== Tasks List Container ==========================
             Expanded(
               child: Container(

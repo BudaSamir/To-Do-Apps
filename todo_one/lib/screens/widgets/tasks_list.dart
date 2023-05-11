@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todo_one/screens/widgets/task_tile.dart';
+import 'package:todo_one/screens/widgets/task_title.dart';
 
 class TasksList extends StatelessWidget {
   const TasksList({
