@@ -21,26 +21,20 @@ class _TasksListState extends State<TasksList> {
   ];
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      // TaskTile present the UI and Task instance present Data
-      // passing task instance value to tasktile variable
-      children: [
-        TaskTile(
-          taskTitle: tasks[0].taskTitle,
-          isChecked: tasks[0].isDone,
-        ),
-        const Divider(),
-        TaskTile(
-          taskTitle: tasks[1].taskTitle,
-          isChecked: tasks[1].isDone,
-        ),
-        const Divider(),
-        TaskTile(
-          taskTitle: tasks[2].taskTitle,
-          isChecked: tasks[2].isDone,
-        ),
-        const Divider(),
-      ],
-    );
+    return ListView.builder(
+        // TaskTile present the UI and Task instance present Data
+        // passing task instance value to tasktile variable
+        itemCount: tasks.length,
+        itemBuilder: (context, index) {
+          return Column(
+            children: [
+              TaskTile(
+                taskTitle: tasks[index].taskTitle,
+                isChecked: tasks[index].isDone,
+              ),
+              const Divider(),
+            ],
+          );
+        });
   }
 }
