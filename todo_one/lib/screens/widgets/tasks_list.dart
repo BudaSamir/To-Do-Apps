@@ -10,10 +10,10 @@ class TasksList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: const [
-        TaskTile(),
-        Divider(),
-        TaskTile(),
-        Divider(),
+        // TaskTile(),
+        // Divider(),
+        // TaskTile(),
+        // Divider(),
       ],
     );
   }
